@@ -10,24 +10,54 @@ Ingrid Pereira dos Santos	4266404
 Gabriela Dias Santos Barros	43902227
 ________________________________________
 1. Dataset
+
 1.1 Descrição
-Descreva o conjunto de dados utilizado nos testes: origem, domínio/assunto, formato (CSV, JSON, etc.) e volume de registros. Dados devem ser complexos/compostos, com 50 mil a 1 milhão de registros.
+O dataset utilizado no projeto será baseado em informações de atletas dos Jogos Paralímpicos, abrangendo competições realizadas entre 1960 e 2024.
+Os dados possuem informações relacionadas aos atletas, países, esportes, eventos e medalhas conquistadas.
+A base original possui aproximadamente 27 mil registros. Como o trabalho exige um volume entre 50 mil e 1 milhão de registros, serão gerados registros adicionais seguindo a mesma estrutura e características dos dados originais, formando uma base de testes com pelo menos 50 mil registros.
+Dessa forma, o projeto poderá utilizar dados reais como base e, ao mesmo tempo, atender ao requisito de volume necessário para os testes das estruturas de dados.
+O arquivo utilizado será disponibilizado em formato CSV.
+
 1.2 Fonte
-Link ou referência de onde o dataset foi obtido (ex: Kaggle, API pública, dados gerados pelo grupo, etc.).
+O dataset utilizado como base contém informações dos Jogos Paralímpicos de 1960 a 2024 e possui como fonte o International Paralympic Committee (IPC).
+Os registros adicionais utilizados para atingir o volume mínimo de 50 mil registros serão gerados pelo grupo com base na estrutura dos dados originais.
+
 1.3 Estrutura dos dados
-Descreva os campos/atributos relevantes que serão usados como chave de inserção, busca e comparação nas árvores.
-Exemplo:
-- id (int)
-- nome (string)
-- valor (float)
+Os principais campos utilizados no projeto serão:
+
+id: identificador único do registro/atleta.
+nome: nome do atleta.
+pais: país representado pelo atleta.
+ano: ano da competição.
+esporte: modalidade esportiva.
+evento: evento em que o atleta participou.
+medalha: medalha conquistada, podendo ser ouro, prata ou bronze.
+posição: posição obtida pelo atleta no evento.
+tipo: identificação se a participação é individual ou por equipe.
+
+Para a árvore AVL, o campo id será utilizado como chave principal para as operações de inserção, busca e remoção.
+Para a árvore Rubro-Negra, será utilizada a quantidade de medalhas como chave de organização dos atletas.
+
 1.4 Justificativa da escolha
-Por que este dataset é adequado para testar a(s) estrutura(s) de árvore escolhida(s) (volume, distribuição dos dados, tipo de chave, etc.)?
-________________________________________
+O dataset foi escolhido por estar diretamente relacionado ao tema do projeto, que é o Sistema de Atletas Paralímpicos.
+A presença de informações sobre atletas, esportes, eventos e medalhas permite utilizar diferentes critérios para testar as estruturas de árvores.
+Na árvore AVL, os atletas serão organizados pelo ID, possibilitando realizar operações de inserção, busca e remoção.
+Na árvore Rubro-Negra, os atletas vão ser organizados de acordo com a quantidade de medalhas.
+Além disso, o volume original de aproximadamente 27 mil registros será ampliado para pelo menos 50 mil registros para atender ao requisito do trabalho e permitir testes com uma quantidade maior de dados.
+
 2. Estrutura(s) de Árvore Escolhida(s)
+
 2.1 Estrutura(s)
-Liste a(s) árvore(s) implementada(s) (ex: BST, AVL, Rubro-Negra, B-Tree, etc.).
+Serão utilizadas duas árvores de busca binária auto-balanceadas:
+Árvore AVL
+Árvore Rubro-Negra
+
 2.2 Justificativa técnica
-Por que essa(s) estrutura(s) foi(ram) escolhida(s) para este dataset e problema? Considere complexidade, balanceamento, caso de uso.
+As árvores AVL e Rubro-Negra foram escolhidas por serem estruturas de busca binária auto-balanceadas.
+A árvore AVL será utilizada para organizar os atletas pelo ID, permitindo realizar operações de inserção, busca e remoção mantendo a árvore balanceada.
+A árvore Rubro-Negra será utilizada para organizar os atletas pela quantidade de medalhas.
+A utilização das duas estruturas também permitirá comparar seus mecanismos de balanceamento e observar as rotações realizadas durante a inserção dos dados.
+
 2.3 Operações implementadas (Para Entrega 2)
 	Inserção
 	Remoção
@@ -35,16 +65,22 @@ Por que essa(s) estrutura(s) foi(ram) escolhida(s) para este dataset e problema?
 	Percursos (pré-ordem, em ordem, pós-ordem)
 	Balanceamento (se aplicável)
 	Outra: ______
+
 2.4 Complexidade
-Tabela com a complexidade assintótica (Big-O) teórica de cada operação implementada, no melhor, médio e pior caso.
-Operação	Melhor caso	Caso médio	Pior caso
-Inserção			
-Busca			
-Remoção			
-________________________________________
+Operação | Melhor caso | Caso médio | Pior caso
+Inserção |   O(log n)  | O(log n)   | O(log n)
+Busca    |     O(1)    | O(log n)   | O(log n)
+Remoção	 |   O(log n)  | O(log n)   | O(log n)
+
+Como as árvores utilizadas são estruturas auto-balanceadas, a altura das árvores é mantida de forma controlada, garantindo operações de busca, inserção e remoção em ordem logarítmica.
+
 3. Plano de Testes
+
 3.1 Objetivo dos testes
-O que o grupo pretende validar (corretude, desempenho, comportamento em casos extremos, etc.).
+Os testes terão como objetivo verificar a corretude das operações implementadas e o comportamento das árvores AVL e Rubro-Negra com diferentes quantidades e ordens de dados.
+Serão avaliadas as operações de inserção, busca, remoção, percursos e balanceamento.
+Também será verificado o comportamento das árvores quando os registros forem inseridos em diferentes ordens, permitindo observar as rotações realizadas pelas estruturas.
+
 3.2 Cenários de teste
 #	Cenário	Entrada	Resultado esperado	Status
 1				☐
