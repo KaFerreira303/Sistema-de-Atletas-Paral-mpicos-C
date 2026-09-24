@@ -107,27 +107,6 @@ Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ord
 
 3 Percursos: Executar os percursos em pré-ordem, em-ordem e pós-ordem, confirmando que a leitura em-ordem gera a ordenação correta das chaves.	
 
-# segunda entrega 
-3.5 Testes de desempenho (Para Entrega 2)
-Descreva como o grupo mediu tempo de execução e/ou uso de memória, e com quais tamanhos de entrada (ex: 100, 1.000, 10.000 registros).
-3.6 Resultados obtidos (Para Entrega 2)
-Resuma os resultados (tabelas, gráficos ou links para arquivos de saída na pasta /resultados) e compare-os com a complexidade assintótica (Big-O) teórica.
-________________________________________
-4. Como Executar
-4.1 Pré-requisitos (Para Entrega 2)
-Linguagem, versão e dependências necessárias.
-4.2 Instruções (Para Entrega 2)
-# Exemplo
-git clone <link-do-repositorio>
-cd <pasta>
-# comandos de compilação/execução
-4.3 Estrutura do repositório (já com pastas para a Entrega 2)
-/src         → código-fonte
-/dataset     → dataset utilizado
-/testes      → scripts e casos de teste
-/resultados  → saídas e relatórios de desempenho
-README.md
-________________________________________
-5. Referências
+# 5. Referências
 Livros-texto de Estrutura de Dados: Fundamentação teórica para as árvores AVL e Rubro-Negra, complexidade assintótica $O(\log n)$ e balanceamento.
 Fonte Oficial do Dataset: Documentação da origem dos dados reais dos Jogos Paralímpicos (International Paralympic Committee).
