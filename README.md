@@ -5,6 +5,7 @@ Entrega 1 de trabalho da disciplina Estruturas de Dados II — UNICID Prof. Cid 
 
 👥 Integrantes do Grupo
 Nome completo	com o RA
+
 Cauã F. Rios de Carvalho	42672007
 
 Derick Gomes de Oliveira	42921121
