@@ -86,7 +86,9 @@ Inserção |               O(log n)  |       O(log n)   |        O(log n)
 
 Como as árvores utilizadas são estruturas auto-balanceadas, a altura das árvores é mantida de forma controlada, garantindo operações de busca, inserção e remoção em ordem logarítmica.
 
-3. Plano de Testes
+# 3 Plano de teste 
+
+
    
    3.1 Os testes têm como objetivo verificar a correção das operações implementadas (inserção, busca, remoção e percursos) e avaliar o comportamento e o desempenho das árvores AVL e Rubro-Negra sob diferentes ordens de entrada e volumes de dados.
 
