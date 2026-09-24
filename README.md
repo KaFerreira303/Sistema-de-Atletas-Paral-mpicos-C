@@ -4,7 +4,7 @@ Entrega 1 de trabalho da disciplina Estruturas de Dados II — UNICID Prof. Cid 
 
 
 # 👥 Integrantes do Grupo
-Nome completo	com o RA
+Nome completo	com o RGM
 
 Cauã F. Rios de Carvalho	42672007
 
@@ -101,11 +101,32 @@ Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ord
 
 # 4. Cenários de teste
 
-1 Inserção e Busca: Inserir registros e buscar por IDs (AVL) e quantidades de medalhas (Rubro-Negra) existentes e inexistentes para validar os retornos.
+Cenário 1: Inserção e Busca (AVL e Rubro-Negra)Objetivo:Validar a integridade estrutural das árvores durante o povoamento massivo e comprovar a exatidão dos algoritmos de busca para dados presentes e ausentes.Fases de Teste:
 
-2 Remoção: Testar a exclusão nos três casos possíveis: nó folha, nó com apenas um filho e nó com dois filhos (verificando a substituição correta pelo sucessor ou antecessor).
+Inserção Massiva (50.000+ registros):Árvore AVL (Chave = id): Inserção de registros com IDs aleatórios e sequenciais. Deve-se registrar o quantitativo de rotações simples (à esquerda e à direita) e duplas (esquerda-direita e direita-esquerda) executadas para manter o Fator de Balanceamento $FB \in \{-1, 0, 1\}$.Árvore Rubro-Negra (Chave Composta = medalhas + id):
 
-3 Percursos: Executar os percursos em pré-ordem, em-ordem e pós-ordem, confirmando que a leitura em-ordem gera a ordenação correta das chaves.	
+Inserção garantindo o tratamento de chaves duplicadas (atletas com o mesmo número de medalhas). Registro do número de recolorações de nós e rotações necessárias para garantir as propriedades das cores vermelho/preto.Busca por Chaves Existentes (Sucesso):Procedimento: Consulta por 1.000 IDs sorteados e quantidades de medalhas conhecidas no dataset.Resultado Esperado:
+
+Retorno imediato do ponteiro para o nó correspondente contendo a estrutura completa do atleta, executado em tempo limite $O(\log n)$.Busca por Chaves Inexistentes (Falha Controlada):
+
+Procedimento: Consulta por chaves negativas (ex: ID = -1), valores zerados inválidos ou limites superiores além do dataset (ex: ID = 999999).Resultado Esperado: Retorno gracioso de ponteiro nulo (NULL / None) ou mensagem tratada de "Atleta não encontrado", sem interrupção abrupta da aplicação.
+
+Cenário 2:
+Remoção (Três Casos Clássicos de Exclusão)Objetivo:Verificar se o algoritmo de remoção preserva as propriedades de Árvore Binária de Busca e reorganiza corretamente os ponteiros e o balanceamento após a exclusão de nós em diferentes níveis da árvore.Casos de Teste:Caso 
+
+ Remoção de Nó Folha (grau 0):Procedimento: Localizar um nó sem subárvores à esquerda ou à direita e disparar a exclusão.Resultado Esperado: Desalocação da memória do nó, atualização do ponteiro do nó pai para NULL e reavaliação do balanceamento da árvore subindo da folha excluída até a raiz.
+ Caso1:
+ Remoção de Nó com Apenas Um Filho (grau 1):
+Procedimento: Selecionar um nó interno que possua estritamente uma subárvore (apenas filho esquerdo ou apenas filho direito).
+Caso 2:
+resultado Esperado.Promoção direta do único filho para a posição do nó pai removido, garantindo o religamento correto dos ponteiros.
+Caso 3:
+Remoção de Nó com Dois Filhos (grau 2):
+Procedimento: Selecionar nós internos complexos, incluindo a raiz, que possuam ambas as subárvores.Resultado Esperado:Identificação do sucessor em-ordem (menor valor da subárvore direita) ou antecessor em-ordem (maior valor da subárvore esquerda).Cópia das chaves e dados do sucessor/antecessor para o nó alvo da remoção.Exclusão física do nó doador (que cairá no Caso 1 ou Caso 2).Disparo dos rebalanceamentos necessários (rotações na AVL e ajuste de duplo-preto/recolorações na Rubro-Negra).
+
+3 Cenário
+ Percursos (Validação e Ordenação das Chaves)Objetivo:Confirmar a integridade da topologia da árvore e assegurar que as chaves mantêm a relação de ordem correta através do caminhamento por todos os nós.Casos de Teste:Percurso Em-Ordem (In-Order Traversal):
+Mecanismo: Visita a subárvore esquerda, depois a raiz e por fim a subárvore direita ($E \rightarrow R \rightarrow D$).Resultado Esperado: Impressão ou geração de um array de saída onde todas as chaves (id na AVL e medalhas na Rubro-Negra) aparecem de forma estritamente crescente e ordenada.Percurso Pré-Ordem (Pre-Order Traversal):Mecanismo: Visita a raiz primeiro, seguida da subárvore esquerda e da subárvore direita ($R \rightarrow E \rightarrow D$).Resultado Esperado: Mapeamento útil para operações de clonagem, serialização ou reconstrução exata da estrutura da árvore.Percurso Pós-Ordem (Post-Order Traversal):Mecanismo: Visita as subárvores esquerda e direita antes de processar a raiz ($E \rightarrow D \rightarrow R$).Resultado Esperado: Garantia de liberação segura de memória (desalocação de baixo para cima) ou cálculo de propriedades estruturais agregadas sem referências perdidas.
 
 # 5. Referências
 Livros-texto de Estrutura de Dados: Fundamentação teórica para as árvores AVL e Rubro-Negra, complexidade assintótica $O(\log n)$ e balanceamento.
