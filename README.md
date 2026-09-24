@@ -1,6 +1,8 @@
 # Sistema-de-Atletas-Paral-mpicos-C
 Sistema de Atletas Paralímpicos
 Entrega 1 de trabalho da disciplina Estruturas de Dados II — UNICID Prof. Cid Rodrigues de Andrade
+
+
 👥 Integrantes do Grupo
 Nome completo	RA
 Cauã F. Rios de Carvalho	42672007
