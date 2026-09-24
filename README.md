@@ -3,7 +3,7 @@ Sistema de Atletas Paralímpicos
 Entrega 1 de trabalho da disciplina Estruturas de Dados II — UNICID Prof. Cid Rodrigues de Andrade
 
 
-👥 Integrantes do Grupo
+# 👥 Integrantes do Grupo
 Nome completo	com o RA
 
 Cauã F. Rios de Carvalho	42672007
@@ -16,7 +16,7 @@ Gabriela Dias Santos Barros	43902227
 
 Ingrid Pereira dos Santos	4266404
 ________________________________________
-1. Dataset
+# 1. Dataset
 
 1.1 Descrição
 O dataset utilizado no projeto será baseado em informações de atletas dos Jogos Paralímpicos, abrangendo competições realizadas entre 1960 e 2024.
@@ -52,7 +52,7 @@ Na árvore AVL, os atletas serão organizados pelo ID, possibilitando realizar o
 Na árvore Rubro-Negra, os atletas vão ser organizados de acordo com a quantidade de medalhas.
 Além disso, o volume original de aproximadamente 27 mil registros será ampliado para pelo menos 50 mil registros para atender ao requisito do trabalho e permitir testes com uma quantidade maior de dados.
 
-2. Estrutura(s) de Árvore Escolhida(s)
+ # 2. Estrutura(s) de Árvore Escolhida(s)
 
 2.1 Estrutura(s)
 Serão utilizadas duas árvores de busca binária auto-balanceadas:
@@ -91,7 +91,6 @@ Como as árvores utilizadas são estruturas auto-balanceadas, a altura das árvo
 
    
    3.1 Os testes têm como objetivo verificar a correção das operações implementadas (inserção, busca, remoção e percursos) e avaliar o comportamento e o desempenho das árvores AVL e Rubro-Negra sob diferentes ordens de entrada e volumes de dados.
-
 Será analisada a eficiência dos mecanismos de auto-balanceamento, observando a ocorrência de rotações, a manutenção da altura das árvores e o tempo de execução nas operações principais com a base ampliada de pelo menos 50.000 registros.
 
 3.2 Objetivo dos testes
