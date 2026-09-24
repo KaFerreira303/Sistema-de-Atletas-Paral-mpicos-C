@@ -88,17 +88,13 @@ Como as árvores utilizadas são estruturas auto-balanceadas, a altura das árvo
 
 # 3 Plano de teste 
 
-
-   
-   3.1 Os testes têm como objetivo verificar a correção das operações implementadas (inserção, busca, remoção e percursos) e avaliar o comportamento e o desempenho das árvores AVL e Rubro-Negra sob diferentes ordens de entrada e volumes de dados.
+ 3.1 Os testes têm como objetivo verificar a correção das operações implementadas (inserção, busca, remoção e percursos) e avaliar o comportamento e o desempenho das árvores AVL e Rubro-Negra sob diferentes ordens de entrada e volumes de dados.
 Será analisada a eficiência dos mecanismos de auto-balanceamento, observando a ocorrência de rotações, a manutenção da altura das árvores e o tempo de execução nas operações principais com a base ampliada de pelo menos 50.000 registros.
 
 3.2 Objetivo dos testes
 Os testes terão como objetivo verificar a corretude das operações implementadas e o comportamento das árvores AVL e Rubro-Negra com diferentes quantidades e ordens de dados.
 Serão avaliadas as operações de inserção, busca, remoção, percursos e balanceamento.
 Também será verificado o comportamento das árvores quando os registros forem inseridos em diferentes ordens, permitindo observar as rotações realizadas pelas estruturas.
-
-#		Resultado esperado	
 
 3.3 Cenários de teste
 
