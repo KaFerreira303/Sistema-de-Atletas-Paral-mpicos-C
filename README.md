@@ -74,10 +74,15 @@ A utilização das duas estruturas também permitirá comparar seus mecanismos d
 	Outra: ______
 
 2.4 Complexidade
-Operação | Melhor caso | Caso médio | Pior caso
-Inserção |   O(log n)  | O(log n)   | O(log n)
-Busca    |     O(1)    | O(log n)   | O(log n)
-Remoção	 |   O(log n)  | O(log n)   | O(log n)
+
+Operação |    Melhor caso |      Caso médio |    Pior caso
+
+Inserção |       O(log n)  |      O(log n)   |     O(log n)
+
+Busca    |           O(1)    |      O(log n)   |     O(log n)
+
+Remoção	 |        O(log n)  |      O(log n)   |    O(log n)
+
 
 Como as árvores utilizadas são estruturas auto-balanceadas, a altura das árvores é mantida de forma controlada, garantindo operações de busca, inserção e remoção em ordem logarítmica.
 
