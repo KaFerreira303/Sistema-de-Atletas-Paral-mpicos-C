@@ -8,8 +8,8 @@ Nome completo	com o RA
 Cauã F. Rios de Carvalho	42672007
 Derick Gomes de Oliveira	42921121
 Felipe Alves da Silva	43516599
-Ingrid Pereira dos Santos	4266404
 Gabriela Dias Santos Barros	43902227
+Ingrid Pereira dos Santos	4266404
 ________________________________________
 1. Dataset
 
