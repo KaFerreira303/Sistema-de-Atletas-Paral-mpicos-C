@@ -1,6 +1,8 @@
 # Sistema-de-Atletas-Paral-mpicos-C
 Sistema de Atletas Paralímpicos
-Entrega 1 de trabalho da disciplina Estruturas de Dados II — Universidade Cidade de São Paulo (UNICID) 
+Entrega 1 da disciplina Estruturas de Dados II 
+
+Universidade Cidade de São Paulo (UNICID) 
 
 Prof. Cid Rodrigues de Andrade
 
