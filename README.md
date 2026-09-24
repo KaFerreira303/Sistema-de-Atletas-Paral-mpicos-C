@@ -101,7 +101,8 @@ Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ord
 
 # 4. Cenários de teste
 
-Cenário 1: Inserção e Busca (AVL e Rubro-Negra)Objetivo:Validar a integridade estrutural das árvores durante o povoamento massivo e comprovar a exatidão dos algoritmos de busca para dados presentes e ausentes.Fases de Teste:
+ # Cenário 1
+Inserção e Busca (AVL e Rubro-Negra)Objetivo:Validar a integridade estrutural das árvores durante o povoamento massivo e comprovar a exatidão dos algoritmos de busca para dados presentes e ausentes.Fases de Teste:
 
 Inserção Massiva (50.000+ registros):Árvore AVL (Chave = id): Inserção de registros com IDs aleatórios e sequenciais. Deve-se registrar o quantitativo de rotações simples (à esquerda e à direita) e duplas (esquerda-direita e direita-esquerda) executadas para manter o Fator de Balanceamento $FB \in \{-1, 0, 1\}$.Árvore Rubro-Negra (Chave Composta = medalhas + id):
 
@@ -111,7 +112,7 @@ Retorno imediato do ponteiro para o nó correspondente contendo a estrutura comp
 
 Procedimento: Consulta por chaves negativas (ex: ID = -1), valores zerados inválidos ou limites superiores além do dataset (ex: ID = 999999).Resultado Esperado: Retorno gracioso de ponteiro nulo (NULL / None) ou mensagem tratada de "Atleta não encontrado", sem interrupção abrupta da aplicação.
 
-Cenário 2:
+ # Cenário 2:
 Remoção (Três Casos Clássicos de Exclusão)Objetivo:Verificar se o algoritmo de remoção preserva as propriedades de Árvore Binária de Busca e reorganiza corretamente os ponteiros e o balanceamento após a exclusão de nós em diferentes níveis da árvore.Casos de Teste:Caso 
 
  Remoção de Nó Folha (grau 0):Procedimento: Localizar um nó sem subárvores à esquerda ou à direita e disparar a exclusão.Resultado Esperado: Desalocação da memória do nó, atualização do ponteiro do nó pai para NULL e reavaliação do balanceamento da árvore subindo da folha excluída até a raiz.
@@ -124,7 +125,7 @@ Caso 3:
 Remoção de Nó com Dois Filhos (grau 2):
 Procedimento: Selecionar nós internos complexos, incluindo a raiz, que possuam ambas as subárvores.Resultado Esperado:Identificação do sucessor em-ordem (menor valor da subárvore direita) ou antecessor em-ordem (maior valor da subárvore esquerda).Cópia das chaves e dados do sucessor/antecessor para o nó alvo da remoção.Exclusão física do nó doador (que cairá no Caso 1 ou Caso 2).Disparo dos rebalanceamentos necessários (rotações na AVL e ajuste de duplo-preto/recolorações na Rubro-Negra).
 
-3 Cenário
+ #  Cenário 3 
  Percursos (Validação e Ordenação das Chaves)Objetivo:Confirmar a integridade da topologia da árvore e assegurar que as chaves mantêm a relação de ordem correta através do caminhamento por todos os nós.Casos de Teste:Percurso Em-Ordem (In-Order Traversal):
 Mecanismo: Visita a subárvore esquerda, depois a raiz e por fim a subárvore direita ($E \rightarrow R \rightarrow D$).Resultado Esperado: Impressão ou geração de um array de saída onde todas as chaves (id na AVL e medalhas na Rubro-Negra) aparecem de forma estritamente crescente e ordenada.Percurso Pré-Ordem (Pre-Order Traversal):Mecanismo: Visita a raiz primeiro, seguida da subárvore esquerda e da subárvore direita ($R \rightarrow E \rightarrow D$).Resultado Esperado: Mapeamento útil para operações de clonagem, serialização ou reconstrução exata da estrutura da árvore.Percurso Pós-Ordem (Post-Order Traversal):Mecanismo: Visita as subárvores esquerda e direita antes de processar a raiz ($E \rightarrow D \rightarrow R$).Resultado Esperado: Garantia de liberação segura de memória (desalocação de baixo para cima) ou cálculo de propriedades estruturais agregadas sem referências perdidas.
 
