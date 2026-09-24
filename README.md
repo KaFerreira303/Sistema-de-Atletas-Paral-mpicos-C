@@ -85,9 +85,9 @@ Também será verificado o comportamento das árvores quando os registros forem 
 
 3.2 Cenários de teste
 #	Cenário	Entrada	Resultado esperado	Status
-1				☐
-2				☐
-3				☐
+1				
+2				
+3				
 3.3 Casos extremos (edge cases)
 Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ordem crescente/decrescente (pior caso para BST), volume máximo do dataset, etc.
 3.4 Testes de desempenho (Para Entrega 2)
