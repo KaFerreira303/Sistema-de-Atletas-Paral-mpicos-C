@@ -96,9 +96,9 @@ Será analisada a eficiência dos mecanismos de auto-balanceamento, observando a
 Os testes terão como objetivo verificar a corretude das operações implementadas e o comportamento das árvores AVL e Rubro-Negra com diferentes quantidades e ordens de dados.
 Serão avaliadas as operações de inserção, busca, remoção, percursos e balanceamento.
 Também será verificado o comportamento das árvores quando os registros forem inseridos em diferentes ordens, permitindo observar as rotações realizadas pelas estruturas.
+#	Cenário	Entrada	Resultado esperado	Status
 
 3.3 Cenários de teste
-#	Cenário	Entrada	Resultado esperado	Status
 
 1 Inserção e Busca: Inserir registros e buscar por IDs (AVL) e quantidades de medalhas (Rubro-Negra) existentes e inexistentes para validar os retornos.
 
@@ -110,7 +110,7 @@ Também será verificado o comportamento das árvores quando os registros forem 
 Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ordem crescente/decrescente (pior caso para BST), volume máximo do dataset, etc.
 
 
-
+# segunda entrega 
 3.5 Testes de desempenho (Para Entrega 2)
 Descreva como o grupo mediu tempo de execução e/ou uso de memória, e com quais tamanhos de entrada (ex: 100, 1.000, 10.000 registros).
 3.6 Resultados obtidos (Para Entrega 2)
