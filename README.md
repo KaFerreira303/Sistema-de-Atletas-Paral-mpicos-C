@@ -87,22 +87,33 @@ Inserção |               O(log n)  |       O(log n)   |        O(log n)
 Como as árvores utilizadas são estruturas auto-balanceadas, a altura das árvores é mantida de forma controlada, garantindo operações de busca, inserção e remoção em ordem logarítmica.
 
 3. Plano de Testes
+   
+   3.1 Os testes têm como objetivo verificar a correção das operações implementadas (inserção, busca, remoção e percursos) e avaliar o comportamento e o desempenho das árvores AVL e Rubro-Negra sob diferentes ordens de entrada e volumes de dados.
 
-3.1 Objetivo dos testes
+Será analisada a eficiência dos mecanismos de auto-balanceamento, observando a ocorrência de rotações, a manutenção da altura das árvores e o tempo de execução nas operações principais com a base ampliada de pelo menos 50.000 registros.
+
+3.2 Objetivo dos testes
 Os testes terão como objetivo verificar a corretude das operações implementadas e o comportamento das árvores AVL e Rubro-Negra com diferentes quantidades e ordens de dados.
 Serão avaliadas as operações de inserção, busca, remoção, percursos e balanceamento.
 Também será verificado o comportamento das árvores quando os registros forem inseridos em diferentes ordens, permitindo observar as rotações realizadas pelas estruturas.
 
-3.2 Cenários de teste
+3.3 Cenários de teste
 #	Cenário	Entrada	Resultado esperado	Status
-1				
-2				
-3				
-3.3 Casos extremos (edge cases)
+
+1 Inserção e Busca: Inserir registros e buscar por IDs (AVL) e quantidades de medalhas (Rubro-Negra) existentes e inexistentes para validar os retornos.
+
+2 Remoção: Testar a exclusão nos três casos possíveis: nó folha, nó com apenas um filho e nó com dois filhos (verificando a substituição correta pelo sucessor ou antecessor).
+
+3 Percursos: Executar os percursos em pré-ordem, em-ordem e pós-ordem, confirmando que a leitura em-ordem gera a ordenação correta das chaves.	
+
+3.4 Casos extremos (edge cases)
 Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ordem crescente/decrescente (pior caso para BST), volume máximo do dataset, etc.
-3.4 Testes de desempenho (Para Entrega 2)
+
+
+
+3.5 Testes de desempenho (Para Entrega 2)
 Descreva como o grupo mediu tempo de execução e/ou uso de memória, e com quais tamanhos de entrada (ex: 100, 1.000, 10.000 registros).
-3.5 Resultados obtidos (Para Entrega 2)
+3.6 Resultados obtidos (Para Entrega 2)
 Resuma os resultados (tabelas, gráficos ou links para arquivos de saída na pasta /resultados) e compare-os com a complexidade assintótica (Big-O) teórica.
 ________________________________________
 4. Como Executar
