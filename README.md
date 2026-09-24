@@ -96,17 +96,16 @@ Os testes terão como objetivo verificar a corretude das operações implementad
 Serão avaliadas as operações de inserção, busca, remoção, percursos e balanceamento.
 Também será verificado o comportamento das árvores quando os registros forem inseridos em diferentes ordens, permitindo observar as rotações realizadas pelas estruturas.
 
-3.3 Cenários de teste
+3.3 Casos extremos (edge cases)
+Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ordem crescente/decrescente (pior caso para BST), volume máximo do dataset, etc.
+
+# 4 Cenários de teste
 
 1 Inserção e Busca: Inserir registros e buscar por IDs (AVL) e quantidades de medalhas (Rubro-Negra) existentes e inexistentes para validar os retornos.
 
 2 Remoção: Testar a exclusão nos três casos possíveis: nó folha, nó com apenas um filho e nó com dois filhos (verificando a substituição correta pelo sucessor ou antecessor).
 
 3 Percursos: Executar os percursos em pré-ordem, em-ordem e pós-ordem, confirmando que a leitura em-ordem gera a ordenação correta das chaves.	
-
-3.4 Casos extremos (edge cases)
-Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ordem crescente/decrescente (pior caso para BST), volume máximo do dataset, etc.
-
 
 # segunda entrega 
 3.5 Testes de desempenho (Para Entrega 2)
