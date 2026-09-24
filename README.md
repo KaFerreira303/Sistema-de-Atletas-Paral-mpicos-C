@@ -112,3 +112,4 @@ README.md
 ________________________________________
 5. Referências
 Livros-texto de Estrutura de Dados: Fundamentação teórica para as árvores AVL e Rubro-Negra, complexidade assintótica $O(\log n)$ e balanceamento.
+Fonte Oficial do Dataset: Documentação da origem dos dados reais dos Jogos Paralímpicos (International Paralympic Committee).
