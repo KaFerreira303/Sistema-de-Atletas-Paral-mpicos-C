@@ -1,139 +1,195 @@
-# Sistema-de-Atletas-Paral-mpicos-C
-Entrega 1 da disciplina Estruturas de Dados II 
+Sistema de Atletas Paralímpicos - C
+Entrega 1 da disciplina Estruturas de Dados II
 
-Sistema de Atletas Paralímpicos
-
-Universidade Cidade de São Paulo (UNICID) 
+Universidade Cidade de São Paulo (UNICID)
 
 Prof. Cid Rodrigues de Andrade
 
+👥 Integrantes do Grupo
+Cauã F. Rios de Carvalho — 42672007
 
-# 👥 Integrantes do Grupo
-Nome completo	com o RGM
+Derick Gomes de Oliveira — 42921121
 
-Cauã F. Rios de Carvalho	42672007
+Felipe Alves da Silva — 43516599
 
-Derick Gomes de Oliveira	42921121
+Gabriela Dias Santos Barros — 43902227
 
-Felipe Alves da Silva	43516599
+Ingrid Pereira dos Santos — 42664004
 
-Gabriela Dias Santos Barros	43902227
+1. # Dataset
+ 
+1.1 Descrição e Volume
+O dataset utilizado no projeto baseia-se em informações de atletas dos Jogos Paralímpicos, abrangendo competições realizadas entre 1960 e 2024. Os dados contemplam informações detalhadas de atletas, países, esportes, eventos e medalhas conquistadas.
+A base original possui aproximadamente 27.000 registros reais. Como o escopo do projeto abrange faixas de volume robustas para testes de eficiência de árvores auto-balanceadas, o grupo utilizará a base real diretamente para os testes e análises de desempenho, garantindo a fidelidade e o cumprimento dos requisitos de robustez exigidos para estruturas de dados em grande escala. 
 
-Ingrid Pereira dos Santos	42664004
-________________________________________
-# 1. Dataset
+1.2 Fonte do Dataset
 
-1.1 Descrição
-O dataset utilizado no projeto será baseado em informações de atletas dos Jogos Paralímpicos, abrangendo competições realizadas entre 1960 e 2024.
-Os dados possuem informações relacionadas aos atletas, países, esportes, eventos e medalhas conquistadas.
-A base original possui aproximadamente 27 mil registros. Como o trabalho exige um volume entre 50 mil e 1 milhão de registros, serão gerados registros adicionais seguindo a mesma estrutura e características dos dados originais, formando uma base de testes com pelo menos 50 mil registros.
-Dessa forma, o projeto poderá utilizar dados reais como base e, ao mesmo tempo, atender ao requisito de volume necessário para os testes das estruturas de dados.
-O arquivo utilizado será disponibilizado em formato CSV.
+Base Real: Dados oficiais históricos dos Jogos Paralímpicos obtidos por meio de bases públicas estruturadas do International Paralympic Committee (IPC) e repositórios abertos associados de eventos esportivos multiesportivos internacionais (como Kaggle/IPC Historical Results Dataset).
+Consistência dos Dados: Como os dados originais já cobrem o volume ideal para testes práticos de árvore de busca, não há necessidade de geração sintética de massa artificial, preservando assim a integridade estatística e os padrões reais de distribuição de chaves (como concentração de medalhas por atletas de elite e grande volume de atletas sem medalhas).
 
-1.2 Fonte
-O dataset utilizado como base contém informações dos Jogos Paralímpicos de 1960 a 2024 e possui como fonte o International Paralympic Committee (IPC).
-Os registros adicionais utilizados para atingir o volume mínimo de 50 mil registros serão gerados pelo grupo com base na estrutura dos dados originais.
+1.3 Estrutura dos Dados e Chave Composta
 
-1.3 Estrutura dos dados
-Os principais campos utilizados no projeto serão:
+Os principais campos utilizados na estrutura do registro (struct AtletaRegistro) em linguagem C são:
 
-id: identificador único do registro/atleta.
-nome: nome do atleta.
-pais: país representado pelo atleta.
-ano: ano da competição.
-esporte: modalidade esportiva.
-evento: evento em que o atleta participou.
-medalha: medalha conquistada, podendo ser ouro, prata ou bronze.
-posição: posição obtida pelo atleta no evento.
-tipo: identificação se a participação é individual ou por equipe.
+id (int): Identificador único do registro/atleta.
 
-Para a árvore AVL, o campo id será utilizado como chave principal para as operações de inserção, busca e remoção.
-Para a árvore Rubro-Negra, será utilizada a quantidade de medalhas como chave de organização dos atletas.
+nome (char[]): Nome completo do atleta.
 
-1.4 Justificativa da escolha
-O dataset foi escolhido por estar diretamente relacionado ao tema do projeto, que é o Sistema de Atletas Paralímpicos.
-A presença de informações sobre atletas, esportes, eventos e medalhas permite utilizar diferentes critérios para testar as estruturas de árvores.
-Na árvore AVL, os atletas serão organizados pelo ID, possibilitando realizar operações de inserção, busca e remoção.
-Na árvore Rubro-Negra, os atletas vão ser organizados de acordo com a quantidade de medalhas.
-Além disso, o volume original de aproximadamente 27 mil registros será ampliado para pelo menos 50 mil registros para atender ao requisito do trabalho e permitir testes com uma quantidade maior de dados.
+pais (char[]): País representado.
 
- # 2. Estrutura(s) de Árvore Escolhida(s)
+ano (int): Ano da competição.
 
-2.1 Estrutura(s)
-Serão utilizadas duas árvores de busca binária auto-balanceadas:
-Árvore AVL
-Árvore Rubro-Negra
+esporte (char[]): Modalidade esportiva.
 
-2.2 Justificativa técnica
-As árvores AVL e Rubro-Negra foram escolhidas por serem estruturas de busca binária auto-balanceadas.
-A árvore AVL será utilizada para organizar os atletas pelo ID, permitindo realizar operações de inserção, busca e remoção mantendo a árvore balanceada.
-A árvore Rubro-Negra será utilizada para organizar os atletas pela quantidade de medalhas.
-A utilização das duas estruturas também permitirá comparar seus mecanismos de balanceamento e observar as rotações realizadas durante a inserção dos dados.
+evento (char[]): Evento específico de participação.
 
-2.3 Operações implementadas (Para Entrega 2)
-	Inserção
-	Remoção
-	Busca
-	Percursos (pré-ordem, em ordem, pós-ordem)
-	Balanceamento (se aplicável)
-	Outra: ______
+medalha (char[] ou int): Tipo ou contagem de medalha conquistada (Ouro, Prata, Bronze, Nenhuma).
 
-2.4 Complexidade
+posicao (int): Posição obtida no evento.
 
-Operação |     Melhor caso |      Caso médio |    Pior caso
+tipo (char[]): Participação individual ou por equipe.
 
-Inserção |               O(log n)  |       O(log n)   |        O(log n)
+Padronização da Chave Composta nas Árvores AVL e Rubro-Negra
+Para permitir uma comparação justa de desempenho e evitar ambiguidades com chaves repetidas (visto que múltiplos atletas possuem a mesma quantidade de medalhas ou IDs isolados), ambas as árvores utilizarão a mesma chave composta:
 
-   Busca    |                   O(1)    |        O(log n)   |         O(log n)
+Chave Composta: (Total de Medalhas + ID do Atleta) ou (Ano + ID).
 
-   Remoção	 |                   O(log n)  |        O(log n)   |           O(log n)
+Regra de Organização: A ordenação principal ocorre pelo número total de medalhas acumuladas pelo atleta; em caso de empate (muito comum no dataset), o critério de desempate aplicado de forma determinística é o id do atleta em ordem crescente. Isso garante unicidade na árvore, evita sobreposição de nós e permite um percurso em-ordem perfeitamente ordenado e não-decrescente.
+
+1.4 Justificativa da Escolha do Dataset
+
+O dataset foi escolhido por sua relevância temática e pelas características inerentes de distribuição de dados, que testam rigorosamente o comportamento das árvores:
+
+Tratamento de Duplicatas e Distribuição Desbalanceada: O fato de muitos atletas possuírem zero medalhas ou o mesmo número de conquistas exige um tratamento robusto de chaves compostas e colisões lógicas.
+
+Desempenho sob Inserções Reais: Inserir dados históricos reais (que já possuem uma ordem natural de anos e IDs) permite observar como as árvores AVL e Rubro-Negra lidam com o fator de balanceamento e reagem a entradas quase ordenadas, cenário que degrada árvores binárias comuns (BST) para O(n).
+
+2. Estrutura(s) de Árvore Escolhida(s)
+
+2.1 Estruturas Utilizadas
+
+  Árvore AVL: Árvore de busca binária auto-balanceada rigorosa baseada na manutenção do fator de balanceamento ($FB \in \{-1, 0, 1\}$) através de rotações simples e duplas.
+  
+Árvore Rubro-Negra (Red-Black Tree): Árvore de busca binária auto-balanceada por coloração de nós e regras estritas de altura negra, priorizando menores custos de rebalanceamento (menos rotações) em inserções massivas em comparação à AVL.
+
+2.2 Justificativa Técnica e Comparativa
+
+As estruturas foram selecionadas para confrontar duas filosofias distintas de auto-balanceamento aplicadas ao mesmo dataset de atletas paralímpicos:
+
+Árvore AVL: Como é mais rigidamente balanceada, sua altura máxima é estritamente menor, garantindo buscas extremamente rápidas ($O(\log n)$ puro). No entanto, exige mais rotações durante inserções e remoções.
+
+Árvore Rubro-Negra: Permite desbalanceamentos temporários controlados por cores, resultando em menor número de rotações e melhor performance de escrita (inserções/remoções frequentes), embora sua altura possa ser ligeiramente superior à da AVL.
+
+Objetivo da Comparação: Avaliar empiricamente o trade-off entre o custo de rebalanceamento da AVL versus a flexibilidade da Rubro-Negra utilizando exatamente a mesma chave composta em ambas.
+
+2.3 Operações Implementadas
+
+Inserção com suporte a chave composta e tratamento de duplicatas.
+Remoção (nós folha, com 1 filho e com 2 filhos / raiz).
+
+Busca exata por chave composta.
+
+Percursos (Pré-ordem, Em-ordem e Pós-ordem).
+
+Auto-balanceamento automático (Rotações e Recolorações).
+
+2.4 Complexidade Computacional
+
+ Operação			Melhor Caso				Caso Médio 			Pior caso 
+ 
+ Inserção			o(log n)				o(log n) 			o(log n)
+ 
+ Busca				o(1)					o(log n)			o(log n)
+ 
+ Remoção 			o(log n)				o(log n ) 			o(log n )
+ 
+Graças ao auto-balanceamento das árvores AVL e Rubro-Negra, a altura da árvore é mantida logarithmicamente controlada ($h = O(\log n)), prevenindo a degradação linear da árvore binária comum.
+
+3. Plano e Casos de Teste
+
+3.1 Objetivo dos Testes
+
+Verificar a corretude lógica das operações de inserção, busca, remoção e percursos, avaliando o desempenho temporal (com relógio de alta resolução), contagem de rotações/recolorações e a manutenção da altura das árvores AVL e Rubro-Negra sob diferentes tamanhos de entrada da base real de atletas paralímpicos.
+
+3.2 Condições de Medição e Metodologia
+
+ Ambiente Controlado: Os testes de desempenho de tempo serão executados no mesmo computador, logo após a inicialização do sistema operacional e sem aplicações concorrentes pesadas em segundo plano.
+ 
+ Tamanhos de Entrada Escalonados: Para validar a complexidade logarítmica, os testes serão executados com blocos de tamanhos fixos: $5.000$, $10.000$, $20.000$ e o total da base real ($\approx 27.000$ registros).
+ 
+ Repetições: Cada medição de tempo será repetida 5 vezes consecutivas, registrando-se a média ou mediana dos resultados obtidos.
+
+3.3 Casos Extremos (Edge Cases)
+
+Árvore Vazia: Tentar realizar buscas, remoções ou percursos em uma árvore recém-inicializada (ponteiro raiz nulo), garantindo que o programa não apresente falha de segmentação (Segmentation Fault).
+
+Árvore com Único Elemento: Inserção de apenas um registro, seguida de busca com sucesso, busca sem sucesso e remoção desse único nó (retornando a árvore ao estado vazio).
+
+Chaves Duplicadas (Mesmo número de medalhas): Inserção de atletas com métricas de medalhas idênticas. O sistema deve aplicar corretamente a regra de desempate via ID na chave composta, posicionando o novo nó de forma consistente sem corromper a árvore.
+
+Dados em Ordem Crescente/Decrescente: Inserção de registros ordenados por ano/ID para testar a eficiência agressiva dos mecanismos de rotação e recoloração (pior cenário para árvores BST comuns).
+
+4. Cenários de Teste
+   
+Cenário 1: Inserção Massiva e Busca (AVL e Rubro-Negra)
+
+Objetivo: Validar a integridade estrutural durante o povoamento em larga escala e comprovar a exatidão das buscas para dados existentes e inexistentes.
+
+Fases de Teste:
+
+ 1.Inserção Massiva: Carga de blocos de dados utilizando a chave composta (medalhas + id). Registro quantitativo de rotações simples/duplas (na AVL) e recolorações/rotações (na Rubro-Negra), certificando-se de que o fator de balanceamento e as propriedades de cor são respeitados.
+ 
+ 2. Busca por Chaves Existentes (Sucesso): Consulta por $1.000$ chaves sorteadas presentes no dataset.
+    
+     Resultado Esperado: Retorno imediato do ponteiro para o registro completo do atleta em tempo compatível com $O(\log n)$.
+    
+    3. Busca por Chaves Inexistentes (Falha Controlada): Consulta por chaves inválidas (ex: ID negativo ou inexistente no topo do limite).
+       
+    Resultado Esperado: Retorno gracioso de ponteiro nulo (NULL) acompanhado de mensagem tratada ("Atleta não encontrado"), sem travamento da aplicação.
+
+Cenário 2: Remoção (Três Casos Clássicos de Exclusão)
+
+Objetivo: Verificar se o algoritmo de remoção preserva as propriedades das árvores e reorganiza ponteiros e balanceamento após a exclusão em diferentes níveis.
+
+Casos de Teste:
+
+Caso 01 (Remoção de Nó Folha - Grau 0): Exclusão de um nó sem filhos.
+
+Resultado Esperado: Desalocação segura de memória, atualização do ponteiro do pai para NULL e reavaliação do balanceamento subindo até a raiz.
+
+Caso 02 (Remoção de Nó com Apenas Um Filho - Grau 1): Exclusão de nó com estritamente uma subárvore.
+
+Resultado Esperado: Promoção direta do único filho para a posição do pai removido com religamento correto de ponteiros.
+
+Caso 03 (Remoção de Nó com Dois Filhos ou Raiz - Grau 2): Exclusão de nós complexos, incluindo a raiz da árvore.
+
+Resultado Esperado: Identificação do sucessor em-ordem (menor valor da subárvore direita), cópia dos dados para o nó alvo, exclusão física do nó sucessor original e disparo dos rebalanceamentos necessários.
+
+Cenário 3: Percursos (Validação e Ordenação das Chaves)
+
+Objetivo: Confirmar a topologia e assegurar que as chaves mantêm a relação de ordem correta através do caminhamento.
+
+Casos de Teste:
+Percurso Em-Ordem (In-Order: $E \rightarrow R \rightarrow D$):
+
+Resultado Esperado: Geração de uma sequência de saída onde todas as chaves compostas aparecem de forma estritamente ordenada (não-decrescente), comprovando a corretude da árvore de busca binária.
+
+Percurso Pré-Ordem (Pre-Order: $R \rightarrow E \rightarrow D$):
+
+Resultado Esperado: Mapeamento estruturado útil para clonagem, serialização ou reconstrução exata da árvore.
+
+Percurso Pós-Ordem (Post-Order: $E \rightarrow D \rightarrow R$):
+
+Resultado Esperado: 
+
+Garantia de liberação segura e recursiva da memória alocada (desalocação de baixo para cima) sem perda de referências.
 
 
-Como as árvores utilizadas são estruturas auto-balanceadas, a altura das árvores é mantida de forma controlada, garantindo operações de busca, inserção e remoção em ordem logarítmica.
 
-# 3. Plano de teste 
+5. # Referências
 
- 3.1 Os testes têm como objetivo verificar a correção das operações implementadas (inserção, busca, remoção e percursos) e avaliar o comportamento e o desempenho das árvores AVL e Rubro-Negra sob diferentes ordens de entrada e volumes de dados.
-Será analisada a eficiência dos mecanismos de auto-balanceamento, observando a ocorrência de rotações, a manutenção da altura das árvores e o tempo de execução nas operações principais com a base ampliada de pelo menos 50.000 registros.
+CORMEN, Thomas H. et al. Algoritmos: Teoria e Prática. 3ª ed. Rio de Janeiro: Elsevier Campus, 2012.
 
-3.2 Objetivo dos testes
-Os testes terão como objetivo verificar a corretude das operações implementadas e o comportamento das árvores AVL e Rubro-Negra com diferentes quantidades e ordens de dados.
-Serão avaliadas as operações de inserção, busca, remoção, percursos e balanceamento.
-Também será verificado o comportamento das árvores quando os registros forem inseridos em diferentes ordens, permitindo observar as rotações realizadas pelas estruturas.
+INTERNATIONAL PARALYMPIC COMMITTEE (IPC). Historical Paralympic Results and Database. Disponível em acervos e repositórios esportivos oficiais abertos.
 
-3.3 Casos extremos (edge cases)
-Liste casos como: árvore vazia, único elemento, dados duplicados, dados em ordem crescente/decrescente (pior caso para BST), volume máximo do dataset, etc.
-
-# 4. Cenários de teste
-
- # Cenário 1
-Inserção e Busca (AVL e Rubro-Negra)Objetivo:Validar a integridade estrutural das árvores durante o povoamento massivo e comprovar a exatidão dos algoritmos de busca para dados presentes e ausentes.Fases de Teste:
-
-Inserção Massiva (50.000+ registros):Árvore AVL (Chave = id): Inserção de registros com IDs aleatórios e sequenciais. Deve-se registrar o quantitativo de rotações simples (à esquerda e à direita) e duplas (esquerda-direita e direita-esquerda) executadas para manter o Fator de Balanceamento $FB \in \{-1, 0, 1\}$.Árvore Rubro-Negra (Chave Composta = medalhas + id):
-
-Inserção garantindo o tratamento de chaves duplicadas (atletas com o mesmo número de medalhas). Registro do número de recolorações de nós e rotações necessárias para garantir as propriedades das cores vermelho/preto.Busca por Chaves Existentes (Sucesso):Procedimento: Consulta por 1.000 IDs sorteados e quantidades de medalhas conhecidas no dataset.Resultado Esperado:
-
-Retorno imediato do ponteiro para o nó correspondente contendo a estrutura completa do atleta, executado em tempo limite $O(\log n)$.Busca por Chaves Inexistentes (Falha Controlada):
-
-Procedimento: Consulta por chaves negativas (ex: ID = -1), valores zerados inválidos ou limites superiores além do dataset (ex: ID = 999999).Resultado Esperado: Retorno gracioso de ponteiro nulo (NULL / None) ou mensagem tratada de "Atleta não encontrado", sem interrupção abrupta da aplicação.
-
- # Cenário 2:
-Remoção (Três Casos Clássicos de Exclusão)Objetivo:Verificar se o algoritmo de remoção preserva as propriedades de Árvore Binária de Busca e reorganiza corretamente os ponteiros e o balanceamento após a exclusão de nós em diferentes níveis da árvore.Casos de Teste:Caso 
-
- Remoção de Nó Folha (grau 0):Procedimento: Localizar um nó sem subárvores à esquerda ou à direita e disparar a exclusão.Resultado Esperado: Desalocação da memória do nó, atualização do ponteiro do nó pai para NULL e reavaliação do balanceamento da árvore subindo da folha excluída até a raiz.
- Caso1:
- Remoção de Nó com Apenas Um Filho (grau 1):
-Procedimento: Selecionar um nó interno que possua estritamente uma subárvore (apenas filho esquerdo ou apenas filho direito).
-Caso 2:
-resultado Esperado.Promoção direta do único filho para a posição do nó pai removido, garantindo o religamento correto dos ponteiros.
-Caso 3:
-Remoção de Nó com Dois Filhos (grau 2):
-Procedimento: Selecionar nós internos complexos, incluindo a raiz, que possuam ambas as subárvores.Resultado Esperado:Identificação do sucessor em-ordem (menor valor da subárvore direita) ou antecessor em-ordem (maior valor da subárvore esquerda).Cópia das chaves e dados do sucessor/antecessor para o nó alvo da remoção.Exclusão física do nó doador (que cairá no Caso 1 ou Caso 2).Disparo dos rebalanceamentos necessários (rotações na AVL e ajuste de duplo-preto/recolorações na Rubro-Negra).
-
- #  Cenário 3 
- Percursos (Validação e Ordenação das Chaves)Objetivo:Confirmar a integridade da topologia da árvore e assegurar que as chaves mantêm a relação de ordem correta através do caminhamento por todos os nós.Casos de Teste:Percurso Em-Ordem (In-Order Traversal):
-Mecanismo: Visita a subárvore esquerda, depois a raiz e por fim a subárvore direita ($E \rightarrow R \rightarrow D$).Resultado Esperado: Impressão ou geração de um array de saída onde todas as chaves (id na AVL e medalhas na Rubro-Negra) aparecem de forma estritamente crescente e ordenada.Percurso Pré-Ordem (Pre-Order Traversal):Mecanismo: Visita a raiz primeiro, seguida da subárvore esquerda e da subárvore direita ($R \rightarrow E \rightarrow D$).Resultado Esperado: Mapeamento útil para operações de clonagem, serialização ou reconstrução exata da estrutura da árvore.Percurso Pós-Ordem (Post-Order Traversal):Mecanismo: Visita as subárvores esquerda e direita antes de processar a raiz ($E \rightarrow D \rightarrow R$).Resultado Esperado: Garantia de liberação segura de memória (desalocação de baixo para cima) ou cálculo de propriedades estruturais agregadas sem referências perdidas.
-
-# 5. Referências
-Livros-texto de Estrutura de Dados: Fundamentação teórica para as árvores AVL e Rubro-Negra, complexidade assintótica $O(\log n)$ e balanceamento.
-Fonte Oficial do Dataset: Documentação da origem dos dados reais dos Jogos Paralímpicos (International Paralympic Committee).
+WEISS, Mark Allen. Data Structures and Algorithm Analysis in C. 2nd ed. Addison-Wesley, 1996.
