@@ -6,6 +6,7 @@ Universidade Cidade de São Paulo (UNICID)
 Prof. Cid Rodrigues de Andrade
 
 👥 Integrantes do Grupo
+
 Cauã F. Rios de Carvalho — 42672007
 
 Derick Gomes de Oliveira — 42921121
