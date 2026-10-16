@@ -97,15 +97,15 @@ Auto-balanceamento automático (Rotações e Recolorações).
 
 # 2.4 Complexidade Computacional
 
-# Operação			Melhor Caso				Caso Médio 			Pior caso 
+ Operação			Melhor Caso				Caso Médio 			Pior caso 
  
- # Inserção			o(log n)				o(log n) 			o(log n)
+  Inserção			o(log n)				o(log n) 			o(log n)
  
-# Busca				o(1)					o(log n)			o(log n)
+ Busca				o(1)					o(log n)			o(log n)
  
-# Remoção 			o(log n)				o(log n ) 			o(log n )
+ Remoção 			o(log n)				o(log n ) 			o(log n )
  
-# 3. Plano e Casos de Teste
+ 3. Plano e Casos de Teste
 
 # 3.1 Objetivo dos Testes
 
