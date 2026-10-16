@@ -105,7 +105,7 @@ Auto-balanceamento automático (Rotações e Recolorações).
  
  Remoção 			o(log n)				o(log n ) 			o(log n )
  
- 3. Plano e Casos de Teste
+# 3. Plano e Casos de Teste
 
 # 3.1 Objetivo dos Testes
 
