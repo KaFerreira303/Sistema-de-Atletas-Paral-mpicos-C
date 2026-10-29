@@ -1,10 +1,10 @@
-# Sistema de Atletas Paralímpicos - C
+Sistema de Atletas Paralímpicos - C
 
-# Entrega 1 da disciplina Estruturas de Dados II
+Entrega 1 da disciplina Estruturas de Dados II
 
-# Universidade Cidade de São Paulo (UNICID)
+Universidade Cidade de São Paulo (UNICID)
 
-# Prof. Cid Rodrigues de Andrade
+Prof. Cid Rodrigues de Andrade
 
 👥 Integrantes do Grupo
 
