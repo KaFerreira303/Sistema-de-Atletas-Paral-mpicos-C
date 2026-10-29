@@ -60,7 +60,7 @@ Regra de Organização: A ordenação principal ocorre pelo número total de med
 
 # 1.4 Justificativa da Escolha do Dataset
 
-O dataset foi escolhido por sua relevância temática e pelas características inerentes de distribuição de dados, que testam rigorosamente o comportamento das árvores:
+O dataset foi escolhido por sua relevância temática e por suas características de distribuição, que permitem avaliar o comportamento e o desempenho de diferentes algoritmos de árvores de decisão. Além disso, a escolha do tema considera a baixa visibilidade e o reconhecimento ainda limitado dos jogos e das competições de atletas paralímpicos. Dessa forma, a utilização desse conjunto de dados busca aliar a análise técnica dos modelos de classificação à relevância social do tema, proporcionando uma avaliação que considere tanto o desempenho dos algoritmos quanto a importância da temática abordada:
 
 Tratamento de Duplicatas e Distribuição Desbalanceada: O fato de muitos atletas possuírem zero medalhas ou o mesmo número de conquistas exige um tratamento robusto de chaves compostas e colisões lógicas.
 
