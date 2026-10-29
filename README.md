@@ -6,17 +6,17 @@
 
 # Prof. Cid Rodrigues de Andrade
 
-# 👥 Integrantes do Grupo
+👥 Integrantes do Grupo
 
-# Cauã F. Rios de Carvalho — 42672007
+Cauã F. Rios de Carvalho — 42672007
 
-# Derick Gomes de Oliveira — 42921121
+Derick Gomes de Oliveira — 42921121
 
-# Felipe Alves da Silva — 43516599
+Felipe Alves da Silva — 43516599
 
-# Gabriela Dias Santos Barros — 43902227
+Gabriela Dias Santos Barros — 43902227
 
-# Ingrid Pereira dos Santos — 42664004
+Ingrid Pereira dos Santos — 42664004
 
  # 1. Dataset
  
