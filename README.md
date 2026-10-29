@@ -26,7 +26,7 @@ A base original possui aproximadamente 27.000 registros reais. Como o escopo do 
 
 # 1.2 Fonte do Dataset
 
-Base Real: Dados oficiais históricos dos Jogos Paralímpicos obtidos por meio de bases públicas estruturadas do International Paralympic Committee (IPC) e repositórios abertos associados de eventos esportivos multiesportivos internacionais (como Kaggle/IPC Historical Results Dataset).
+Base Real: Dados oficiais históricos dos Jogos Paralímpicos obtidos por meio de bases públicas estruturadas do International Paralympic Committee (IPC) (https://www.paralympic.org/athletes-council) e repositórios abertos associados de eventos esportivos multiesportivos internacionais (como Kaggle/IPC Historical Results Dataset) (https://www.ipc-services.org/hira/results-books).
 Consistência dos Dados: Como os dados originais já cobrem o volume ideal para testes práticos de árvore de busca, não há necessidade de geração sintética de massa artificial, preservando assim a integridade estatística e os padrões reais de distribuição de chaves (como concentração de medalhas por atletas de elite e grande volume de atletas sem medalhas).
 
 # 1.3 Estrutura dos Dados e Chave Composta
@@ -109,7 +109,7 @@ Auto-balanceamento automático (Rotações e Recolorações).
 
 # 3.1 Objetivo dos Testes
 
-Verificar a corretude lógica das operações de inserção, busca, remoção e percursos, avaliando o desempenho temporal (com relógio de alta resolução), contagem de rotações/recolorações e a manutenção da altura das árvores AVL e Rubro-Negra sob diferentes tamanhos de entrada da base real de atletas paralímpicos.
+Verificar a corretude lógica das operações de inserção, busca, remoção e percursos, avaliando o desempenho temporal (com relógio de alta medição), contagem de rotações/recolorações e a manutenção da altura das árvores AVL e Rubro-Negra sob diferentes tamanhos de entrada da base real de atletas paralímpicos.
 
 # 3.2 Condições de Medição e Metodologia
 
@@ -117,7 +117,7 @@ Verificar a corretude lógica das operações de inserção, busca, remoção e 
  
  Tamanhos de Entrada Escalonados: Para validar a complexidade logarítmica, os testes serão executados com blocos de tamanhos fixos: $5.000$, $10.000$, $20.000$ e o total da base real ($\approx 27.000$ registros).
  
- Repetições: Cada medição de tempo será repetida 5 vezes consecutivas, registrando-se a média ou mediana dos resultados obtidos.
+ Repetições: Cada medição de tempo será repetida 5 vezes consecutivas, registrando-se a mediana dos resultados obtidos.
 
 # 3.3 Casos Extremos (Edge Cases)
 
