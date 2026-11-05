@@ -1,0 +1,11 @@
+# binarios e objetos
+bin/
+*.o
+*.exe
+*.out
+
+# editores / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
